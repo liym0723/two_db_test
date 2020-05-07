@@ -43,12 +43,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
-    autoprefixer-rails (9.7.6)
-      execjs
     bindex (0.8.1)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
     builder (3.2.4)
     byebug (11.0.1)
     coffee-rails (4.2.2)
@@ -63,6 +58,7 @@ GEM
     duktape (2.0.1.0)
     erubi (1.9.0)
     execjs (2.7.0)
+    ffi (1.11.1)
     ffi (1.11.1-x64-mingw32)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
@@ -102,9 +98,12 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     multi_json (1.14.1)
+    mysql2 (0.4.10)
     mysql2 (0.4.10-x64-mingw32)
     nio4r (2.5.2)
-    nokogiri (1.10.7-x64-mingw32)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.9-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     puma (3.12.0)
     rack (2.1.1)
@@ -149,8 +148,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sassc (2.3.0-x64-mingw32)
-      ffi (~> 1.9)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -184,10 +181,10 @@ GEM
       rails (~> 5.0, < 5.3)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.4.1)
   byebug
   coffee-rails (~> 4.2)
   duktape
