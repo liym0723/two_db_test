@@ -12,9 +12,9 @@ class Library::BooksController < ApplicationController
   end
 
   def create
-    book = Library::Book.new book_params
-    if book.valid?
-      book.save(validate: false)
+    @book = Library::Book.new book_params
+    if @book.valid?
+      @book.save(validate: false)
       redirect_to library_books_path,notice: "success"
     else
       render :new
