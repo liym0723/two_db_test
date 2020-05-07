@@ -11,9 +11,17 @@ development:
   <<: *default
   database: liym_user
 
-test:
-  <<: *default
-  database: liym_user
-
 
 # two db
+library_default: &library_default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: 123456
+  host: localhost
+
+# 生产环境
+library_development:
+  <<: *library_default
+  database: library_development

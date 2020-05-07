@@ -1,0 +1,36 @@
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+<%=
+
+  grid(@users) do |u|
+
+    u.column name: "ID" do |user|
+      user.id
+    end
+
+    u.column name: "Name" do |user|
+      user.name
+    end
+
+    u.column name: "Email" do |user|
+      user.email
+    end
+    u.column name: "操作" do |user|
+      link_to 'Show', user
+    end
+    u.column name: "" do |user|
+      link_to 'Edit', edit_user_path(user)
+    end
+    u.column name: "" do |user|
+      link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+    end
+  end -%>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

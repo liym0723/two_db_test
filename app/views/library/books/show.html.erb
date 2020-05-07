@@ -1,0 +1,15 @@
+<p id="notice">书籍信息</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @book.name %>
+</p>
+
+<p>
+  <strong>借阅人:</strong>
+  <%= @book.user.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_library_book_path(@book.id) %> |
+<%= link_to 'Back', library_books_path %>

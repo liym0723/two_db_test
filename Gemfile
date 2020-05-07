@@ -6,11 +6,11 @@ ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'mysql2' , '~> 0.3.21'#'>= 0.3.18', '< 0.5'
+gem 'mysql2' , '~> 0.4.4'#'>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -33,11 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+# This gem works on macOS and Linux. 只能在 linux 和 mac 上
+#gem 'bootsnap', '~> 1.4', '>= 1.4.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+ gem 'byebug' # , platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -45,13 +46,22 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
-end
+# No test environment
+# group :test do
+#   # Adds support for Capybara system testing and selenium driver
+#   gem 'capybara', '>= 2.15'
+#   gem 'selenium-webdriver'
+#   # Easy installation and use of chromedriver to run system tests with Chrome
+#   gem 'chromedriver-helper'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 网格插件
+gem 'wice_grid', '~> 4.1'
+gem 'font-awesome-sass',  '~> 4.3'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+

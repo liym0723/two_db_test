@@ -1,0 +1,39 @@
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Books</h1>
+
+<%= grid(@books) do |b|
+
+  b.column name:  'ID' do |book|
+    book.id
+  end
+
+  b.column name:  'Name' do |book|
+    book.name
+  end
+
+  b.column name: '管理员' do |book|
+    book.user.name
+  end
+
+
+  b.column name: '操作' do |book|
+    link_to 'Show', library_book_path(book.id)
+  end
+
+  b.column name: '' do |book|
+    link_to 'Edit', edit_library_book_path(book.id)
+  end
+
+  b.column name: '' do |book|
+    link_to 'Destroy', library_book_path(book.id), method: :delete, data: { confirm: 'Are you sure?' }
+  end
+
+end -%>
+
+
+
+
+<%= link_to 'New Book', new_library_book_path %>
