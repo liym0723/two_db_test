@@ -1,4 +1,13 @@
 
+<% if flash[:error].present? %>
+  <script>
+    $(function () {
+        alert("<%= flash[:error] %>")
+    })
+  </script>
+<% end %>
+
+
 
 <p id="notice"><%= notice %></p>
 

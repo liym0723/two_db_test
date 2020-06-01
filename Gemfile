@@ -1,8 +1,6 @@
 source 'https://gems.ruby-china.com'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.1'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
@@ -65,3 +63,4 @@ gem 'font-awesome-sass',  '~> 4.3'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'pundit', '~> 2.1' # 权限控制插件
