@@ -6,7 +6,6 @@ class CreateBooks < ActiveRecord::Migration[5.2]
   end
 
   def change
-    pp "1111111111111111111"
     create_table :books, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
       t.integer :user_id, null: false
       t.string :name, null: false

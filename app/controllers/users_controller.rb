@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    # @users = User.all
-   @users = initialize_grid( User,order: 'id')
+    # 可以根据设定的权限去显示对应的数据
+    user = policy_scope(User)
+    @users = initialize_grid( User,order: 'id')
   end
 
   # GET /users/1
@@ -83,4 +84,5 @@ class UsersController < ApplicationController
     def check_authority
       authorize :user
     end
+
 end

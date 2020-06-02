@@ -7,4 +7,16 @@ class UserPolicy < ApplicationPolicy
       user.name == "liym"
     end
   end
+
+
+
+  class Scope < Scope
+    def resolve
+      if user.name == "liym_2"
+        scope.all
+      else
+        scope.where(id: user.id).default_order
+      end
+    end
+  end
 end
