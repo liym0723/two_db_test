@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1626ef2c-e11e-4a57-bdac-6aafc0695706" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/policies/book_policy.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/two_db_test.iml" afterPath="$PROJECT_DIR$/.idea/two_db_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/library/books_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/library/books_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/library/books/index.html.erb" afterPath="$PROJECT_DIR$/app/views/library/books/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -31,6 +23,8 @@
     <SUITE FILE_PATH="coverage/two_db_test@db_migrate__two_db_test.coverage" NAME="db:migrate: two_db_test Coverage Results" MODIFIED="1588819866443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@db_library_migrate__two_db_test.coverage" NAME="db:library:migrate: two_db_test Coverage Results" MODIFIED="1588830863371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@library.coverage" NAME="library Coverage Results" MODIFIED="1588819858295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/tasks" MODULE_NAME="two_db_test" />
+    <SUITE FILE_PATH="coverage/two_db_test@algorithm.coverage" NAME="algorithm Coverage Results" MODIFIED="1591865836621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/public/tests" MODULE_NAME="two_db_test" />
+    <SUITE FILE_PATH="coverage/two_db_test@struct_test.coverage" NAME="struct_test Coverage Results" MODIFIED="1591865845554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/public/tests" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@Development__two_db_test.coverage" NAME="Development: two_db_test Coverage Results" MODIFIED="1591835715020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="two_db_test" />
   </component>
   <component name="FileEditorManager">
@@ -39,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="341">
-              <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+              <caret line="75" column="39" lean-forward="false" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -65,11 +59,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mustache_base.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mustache_base.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mustaches/mustache_base.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
               <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="struct_test.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/tests/struct_test.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="algorithm.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/tests/algorithm.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -153,8 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/tasks/library.rake" />
-        <option value="$PROJECT_DIR$/app/views/library/books/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/models/library/liym.rb" />
         <option value="$PROJECT_DIR$/db/library/migrate/20200507053914_create_test.rb" />
@@ -204,6 +216,8 @@
         <option value="$PROJECT_DIR$/app/mustaches/user_mustache.mustache" />
         <option value="$PROJECT_DIR$/app/mustaches/user_mustache.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/public/tests/algorithm.rb" />
+        <option value="$PROJECT_DIR$/public/tests/struct_test.rb" />
       </list>
     </option>
   </component>
@@ -257,20 +271,13 @@
             <path>
               <item name="two_db_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="two_db_test" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="two_db_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="two_db_test" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="two_db_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="two_db_test" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="mustaches" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="two_db_test" type="b2602c69:ProjectViewProjectNode" />
@@ -323,16 +330,16 @@
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\lym_project\two_db_test\db\library\migrate" />
+      <recent name="E:\lym_project\two_db_test\db\library" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\lym_project\two_db_test\public\tests" />
       <recent name="E:\lym_project\two_db_test\app\mustaches" />
       <recent name="E:\lym_project\two_db_test\app\policies" />
       <recent name="E:\lym_project\two_db_test\app\helpers" />
       <recent name="E:\lym_project\two_db_test\app\helpers\library" />
-      <recent name="E:\lym_project\two_db_test\app\assets\javascripts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\lym_project\two_db_test\db\library\migrate" />
-      <recent name="E:\lym_project\two_db_test\db\library" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -347,7 +354,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Rails.Development: two_db_test">
+  <component name="RunManager" selected="Ruby.struct_test">
     <configuration name="Development: two_db_test" type="RailsRunConfigurationType" factoryName="Rails">
       <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
       <module name="two_db_test" />
@@ -388,23 +395,19 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
     </configuration>
-    <configuration name="db:library:create: two_db_test" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+    <configuration name="algorithm" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="two_db_test" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/public/tests" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:library:create" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/public/tests/algorithm.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
     </configuration>
     <configuration name="db:library:migrate: two_db_test" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="two_db_test" />
@@ -444,20 +447,6 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
     </configuration>
-    <configuration name="library" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="two_db_test" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/lib/tasks" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/lib/tasks/library.rake" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-    </configuration>
     <configuration name="spec: two_db_test" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="two_db_test" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -475,6 +464,20 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+    </configuration>
+    <configuration name="struct_test" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="two_db_test" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/public/tests" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/public/tests/struct_test.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
     </configuration>
     <configuration name="test: two_db_test" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="two_db_test" />
@@ -516,18 +519,18 @@
       <item index="2" class="java.lang.String" itemvalue="Rake.test: two_db_test" />
       <item index="3" class="java.lang.String" itemvalue="Rake.spec: two_db_test" />
       <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate: two_db_test" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.db:library:create: two_db_test" />
-      <item index="6" class="java.lang.String" itemvalue="Rake.db:library:migrate: two_db_test" />
-      <item index="7" class="java.lang.String" itemvalue="Ruby.library" />
-      <item index="8" class="java.lang.String" itemvalue="Ruby.users_controller" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.db:library:migrate: two_db_test" />
+      <item index="6" class="java.lang.String" itemvalue="Ruby.users_controller" />
+      <item index="7" class="java.lang.String" itemvalue="Ruby.algorithm" />
+      <item index="8" class="java.lang.String" itemvalue="Ruby.struct_test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Ruby.users_controller" />
-        <item index="1" class="java.lang.String" itemvalue="Rake.db:library:migrate: two_db_test" />
-        <item index="2" class="java.lang.String" itemvalue="Rake.db:migrate: two_db_test" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.library" />
-        <item index="4" class="java.lang.String" itemvalue="Rake.db:library:create: two_db_test" />
+        <item index="0" class="java.lang.String" itemvalue="Ruby.struct_test" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.algorithm" />
+        <item index="2" class="java.lang.String" itemvalue="Ruby.users_controller" />
+        <item index="3" class="java.lang.String" itemvalue="Rake.db:library:migrate: two_db_test" />
+        <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate: two_db_test" />
       </list>
     </recent_temporary>
   </component>
@@ -548,12 +551,12 @@
       <workItem from="1591143552838" duration="11952000" />
       <workItem from="1591233756756" duration="25859000" />
       <workItem from="1591314815117" duration="25282000" />
-      <workItem from="1591835689138" duration="43000" />
+      <workItem from="1591835689138" duration="2417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120352000" />
+    <option name="totallyTimeSpent" value="122726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -566,13 +569,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26279318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48966268" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48966268" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48966268" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -601,27 +603,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/utils/ruby/ruby/Ruby23-x64/lib/ruby/gems/2.3.0/gems/ffi-1.11.1-x64-mingw32/lib/ffi/library.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/application_record.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/controllers/library/books_controller_test.rb" />
     <entry file="file://$PROJECT_DIR$/app/views/library/books/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
@@ -921,7 +902,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
-          <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+          <caret line="75" column="39" lean-forward="false" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -938,6 +919,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tests/significant.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tests/algorithm.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tests/struct_test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
           <folding />
         </state>
       </provider>
