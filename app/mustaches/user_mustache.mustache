@@ -1,0 +1,80 @@
+
+{{#rendered}}
+Hi {{name}}.
+{{/rendered}}
+
+============== Test Tag ================= <br>
+{{change_tag}}  <br>
+{{=<% %>=}}
+ <% change_tag %> <br>
+<%={{ }}=%>
+{{change_tag}} <br>
+
+
+
+
+============================================<br>
+
+{{#repo}}
+email: {{email}} <br>
+name: {{name}} <br>
+test_blank: {{#test_blank}}{{test_blank}}{{/test_blank}}{{^test_blank}}blank no data{{/test_blank}} <br>
+test_annotate{{! test annotate luck}}<br>
+================ 分割线 ===================== <br>
+{{/repo}}
+
+
+
+<h2>test one</h2>
+Hello {{name}} <br>
+You have just won {{value}} dollars! <br>
+{{#in_ca}}
+Well, {{taxed_value}} dollars, after taxes. <br>
+{{/in_ca}}
+
+======================================= <br>
+<h2>test two Variables</h2>
+
+* name: {{name}}<br>
+* age: {{age}}<br>
+* html_value: {{html_value}}<br>
+* html_value: {{{html_value}}}<br>
+
+
+======================================= <br>
+<h2>test three Sections</h2>
+
+{{#in_ca}}
+    Yes I do<br>
+{{/in_ca}}
+
+
+======================================= <br>
+<h2>test four Non-Empty Lists</h2>
+{{#repo}}
+  <b>{{name}}</b><br>
+{{/repo}}
+======================================= <br>
+<h2>test five</h2>
+
+{{#person}}
+  Hi {{name}}! <br>
+{{/person}}
+1
+======================================= <br>
+<h2>test six Inverted Sections</h2>
+
+{{#in_present}}
+    in present  <br>
+{{/in_present}}
+{{^in_present}}
+    no in present <br>
+{{/in_present}}
+
+======================================= <br>
+<h2>test Seven Inverted Sections</h2>
+{{#name}}
+{{> admin_mustache}}
+{{/name}}
+======================================= <br>
+Lambdas,Non-False Values

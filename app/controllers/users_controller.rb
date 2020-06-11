@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   def index
     # 可以根据设定的权限去显示对应的数据
     user = policy_scope(User)
-    @users = initialize_grid( User,order: 'id')
+   @users = initialize_grid( User,order: 'id')
+
+ # pp Mustache.render("Hello {{plant}}",plant: "World!")
+
+   # self.response_body = "hello word" # response_body 反应内容
   end
 
   # GET /users/1
@@ -64,6 +68,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def mustache_test
+    @users = User.all
+    view = (UserMustache.new @users)
+    # view.render  -> 模板里面的内容
+    pp "=========================="
+    pp self.response_body = view.render
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

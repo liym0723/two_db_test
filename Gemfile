@@ -64,3 +64,4 @@ gem 'font-awesome-sass',  '~> 4.3'
 gem 'jquery-rails'
 
 gem 'pundit', '~> 2.1' # 权限控制插件
+gem 'mustache', '~> 1.1', '>= 1.1.1' # 邮件模板插件

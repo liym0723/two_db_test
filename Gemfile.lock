@@ -95,6 +95,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
+    mustache (1.1.1)
     mysql2 (0.4.10-x64-mingw32)
     nio4r (2.5.2)
     nokogiri (1.10.9-x64-mingw32)
@@ -186,6 +187,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.3)
   jbuilder (~> 2.5)
   jquery-rails
+  mustache (~> 1.1, >= 1.1.1)
   mysql2 (~> 0.4.4)
   puma (~> 3.11)
   pundit (~> 2.1)

@@ -32,7 +32,9 @@
     link_to 'Show', library_book_path(book.id)
   end
 
+
   b.column name: '' do |book|
+    pp policy(:book).create?
     link_to 'Edit', edit_library_book_path(book.id)
   end
 

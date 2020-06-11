@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'users#index'
-  resources :users
+  resources :users do
+    collection do
+      get 'mustache_test'
+    end
+  end
 
   namespace :library do
     resources :books

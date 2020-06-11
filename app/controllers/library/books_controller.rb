@@ -1,9 +1,10 @@
 class Library::BooksController < ApplicationController
+  before_action :check_authority
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
 
   def index
-    @books = initialize_grid( Library::Book.includes(:user),order: 'id')
+    @books = initialize_grid( policy_scope(Library::Book,policy_scope_class: BookPolicy::Scope),order: 'id')
    # @books = Library::Book.all
   end
 
@@ -51,5 +52,16 @@ class Library::BooksController < ApplicationController
 
   def set_book
     @book = Library::Book.where(id: params[:id]).first
+  end
+
+
+
+  def pundit_user
+    # TODO 因为没有current_user 默认给个用户吧
+    User.find_by(id: 1)
+  end
+
+  def check_authority
+    authorize :book
   end
 end

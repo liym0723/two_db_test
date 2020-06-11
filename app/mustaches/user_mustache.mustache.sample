@@ -1,0 +1,54 @@
+<h2>test one</h2>
+Hello {{name}} <br>
+You have just won {{value}} dollars! <br>
+{{#in_ca}}
+Well, {{taxed_value}} dollars, after taxes. <br>
+{{/in_ca}}
+
+======================================= <br>
+<h2>test two Variables</h2>
+
+* name: {{name}}<br>
+* age: {{age}}<br>
+* html_value: {{html_value}}<br>
+* html_value: {{{html_value}}}<br>
+
+
+======================================= <br>
+<h2>test three Sections</h2>
+
+{{#in_ca}}
+    Yes I do<br>
+{{/in_ca}}
+
+
+======================================= <br>
+<h2>test four Non-Empty Lists</h2>
+{{#repo}}
+  <b>{{name}}</b><br>
+{{/repo}}
+======================================= <br>
+<h2>test five</h2>
+
+{{#person}}
+  Hi {{name}}! <br>
+{{/person}}
+1
+======================================= <br>
+<h2>test six Inverted Sections</h2>
+
+{{#in_present}}
+    in present  <br>
+{{/in_present}}
+{{^in_present}}
+    no in present <br>
+{{/in_present}}
+
+======================================= <br>
+<h2>test Seven Inverted Sections</h2>
+{{#name}}
+   {{> name}}
+{{/name}}
+
+======================================= <br>
+Lambdas,Non-False Values
