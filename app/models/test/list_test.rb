@@ -11,7 +11,7 @@ class ListTest
   # 向末尾插入链表
   def add(v)
     return if v.nil?
-    return if !query_curr(v).nil? # 如果已经存在也不插入
+    return if query_curr(v) != nil # 如果已经存在也不插入
     list = List.new(v)
     if @foot.nil? # 如果链表为空 头和尾都是同一个
       @head = @foot = list
@@ -103,12 +103,12 @@ class ListTest
   end
 
 
-
   # 新增 默认是尾部新增
+  # value 新增的key   insert_value 增在那个值后面
   def insert value,insert_value = @foot.val
-    # 新增数据
+    return if query_curr(value) != nil # 如果要插入的值,已经存在也不插入
     list = query_curr insert_value
-    return if list.nil?
+    return if list.nil? # 如果要插入的位置不存在，那么不插入
 
     add_list = List.new(value)
 
@@ -122,8 +122,41 @@ class ListTest
       list.next = add_list
       add_list.next = prev_next
     end
+      # TODO 无法在头新增
+  end
+
+  # 根据下表插入数据
+  def insert_by_index value,index
+    return if query_curr(value) != nil # 如果要插入的值,已经存在也不插入
+    add_list = List.new(value)
+    if @foot.nil?
+      # 往空链表里插入数据
+      @head = @foot = add_list
+    else
+      # 有数据的链表插入数据
+      curr = @head
+      prev = nil
+      index.times do |i|
+        prev = curr
+        curr = curr.next
+        break if prev.next.nil?
+      end
+      if prev.nil? # 头插入
+        add_list.next = curr
+        @head = add_list
+      elsif curr.nil? # 尾插入
+        prev.next = add_list
+        @foot = add_list
+      else # 中间插入
+        prev.next = add_list
+        add_list.next = curr
+      end
+
+    end
 
   end
+
+
 
   # 删除
   def destroy value
@@ -166,19 +199,46 @@ end
 # 创建链表
 list = ListTest.new(1,2,3,4)
 list.add(5)
+
+
+
+
+# 增 测试
+# pp list.to_s
+#
+# list.insert(6)
+# pp list.to_s
+# list.insert(8,77)
+# pp list.to_s
+# list.insert_by_index(11,8)
+# 查 测试
+
+# pp list.query_curr 2
+# pp list.query_perv 2
+# 删 测试
+
+# pp list.to_s
+# list.destroy 4
+# pp list
+
+# 反转 测试
+pp list
+list.reverse
+pp list
+
 #
 #
 # pp list.to_s
 # pp "====================="
 
-list.insert 6,3
-
-pp list
-pp "============================="
-
-list.destroy 5
-
-pp list
+# list.insert 6,3
+#
+# pp list
+# pp "============================="
+#
+# list.destroy 5
+#
+# pp list
 
 
 # 查询链表
@@ -192,5 +252,5 @@ pp list
 # 删除链表
 # list.destroy 5
 # 反转链表
-list.reverse
-pp list
+# list.reverse
+# pp list
