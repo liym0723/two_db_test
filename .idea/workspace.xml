@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1626ef2c-e11e-4a57-bdac-6aafc0695706" name="Default" comment="" />
+    <list default="true" id="1626ef2c-e11e-4a57-bdac-6aafc0695706" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/test/linken_list.rb" afterPath="$PROJECT_DIR$/app/models/test/linken_list.rb" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -16,7 +18,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/two_db_test@users_controller.coverage" NAME="users_controller Coverage Results" MODIFIED="1591343922761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/controllers" MODULE_NAME="two_db_test" />
-    <SUITE FILE_PATH="coverage/two_db_test@linken_list.coverage" NAME="linken_list Coverage Results" MODIFIED="1592210379664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/test" MODULE_NAME="two_db_test" />
+    <SUITE FILE_PATH="coverage/two_db_test@linken_list.coverage" NAME="linken_list Coverage Results" MODIFIED="1592210778989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/test" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@stack.coverage" NAME="stack Coverage Results" MODIFIED="1592203643084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/test" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@db_create__two_db_test.coverage" NAME="db:create: two_db_test Coverage Results" MODIFIED="1588813500758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@db_library_create__two_db_test.coverage" NAME="db:library:create: two_db_test Coverage Results" MODIFIED="1588817060555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="two_db_test" />
@@ -64,8 +66,8 @@
       <file leaf-file-name="linken_list.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/test/linken_list.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1334">
-              <caret line="116" column="19" lean-forward="true" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
+            <state relative-caret-position="374">
+              <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,8 +76,8 @@
       <file leaf-file-name="stack.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/test/stack.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="121">
+              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -538,7 +540,7 @@
       <workItem from="1591233756756" duration="25859000" />
       <workItem from="1591314815117" duration="25282000" />
       <workItem from="1591835689138" duration="12865000" />
-      <workItem from="1592179994487" duration="6147000" />
+      <workItem from="1592179994487" duration="6481000" />
     </task>
     <servers />
   </component>
@@ -575,7 +577,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139321000" />
+    <option name="totallyTimeSpent" value="139655000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -594,7 +596,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48966268" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3547334" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3547334" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -938,14 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/test/stack.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/test/list_test.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -954,10 +948,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/test/stack.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/test/linken_list.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1334">
-          <caret line="116" column="19" lean-forward="true" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
+        <state relative-caret-position="374">
+          <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
           <folding />
         </state>
       </provider>

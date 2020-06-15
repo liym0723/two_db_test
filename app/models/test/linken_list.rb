@@ -30,7 +30,7 @@ class LinkenList
   # 新增在尾巴
   def add v
     return if v.nil?
-    return if !(query_curr(v).nil?)
+    return if !(query_curr(v).nil?) # 存在就不加进去了
     node = Node.new(v)
     if @foot.nil? # 空链表
       @head = @foot = node
@@ -163,29 +163,29 @@ end
 
 
 
-node = LinkenList.new(1,2,3,4)
+linken_list = LinkenList.new(1,2,3,4)
 
 # 增
-node.add(5)
+linken_list.add(5)
 
-node.insert_by_val(9,4) # 在 val为4的 后面插入 9
-pp node.to_s
+linken_list.insert_by_val(9,4) # 在 val为4的 后面插入 9
+pp linken_list.to_s
 
-node.insert_by_index(8,1) # 在下标为1的地方 插入 8
-pp node.to_s
+linken_list.insert_by_index(8,1) # 在下标为1的地方 插入 8
+pp linken_list.to_s
 # 删
 
-node.destroy 2
-pp node.to_s
+linken_list.destroy 2
+pp linken_list.to_s
 
 # 查
 
-pp node.query_curr(3)
+pp linken_list.query_curr(3)
 
-pp node.query_perv(3)
+pp linken_list.query_perv(3)
 
 
 # 反转
-pp node.to_s
-node.reverse
-pp node.to_s
+pp linken_list.to_s
+linken_list.reverse
+pp linken_list.to_s
