@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1626ef2c-e11e-4a57-bdac-6aafc0695706" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1626ef2c-e11e-4a57-bdac-6aafc0695706" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -18,6 +16,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/two_db_test@users_controller.coverage" NAME="users_controller Coverage Results" MODIFIED="1591343922761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/controllers" MODULE_NAME="two_db_test" />
+    <SUITE FILE_PATH="coverage/two_db_test@linken_list.coverage" NAME="linken_list Coverage Results" MODIFIED="1592210379664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/test" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@stack.coverage" NAME="stack Coverage Results" MODIFIED="1592203643084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/test" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@db_create__two_db_test.coverage" NAME="db:create: two_db_test Coverage Results" MODIFIED="1588813500758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="two_db_test" />
     <SUITE FILE_PATH="coverage/two_db_test@db_library_create__two_db_test.coverage" NAME="db:library:create: two_db_test Coverage Results" MODIFIED="1588817060555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="two_db_test" />
@@ -40,23 +39,43 @@
     <expand />
     <select />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="list_test.rb" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/models/test/list_test.rb">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="23">
+                    <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="list_test.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/test/list_test.rb">
+      <file leaf-file-name="linken_list.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/test/linken_list.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="-1334">
+              <caret line="116" column="19" lean-forward="true" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stack.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stack.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/test/stack.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-385">
-              <caret line="81" column="18" lean-forward="true" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
+            <state relative-caret-position="92">
+              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -99,11 +118,11 @@
       <find>settings template_name</find>
       <find>path</find>
       <find>template_name</find>
-      <find>template_name</find>
       <find>1111</find>
-      <find>path</find>
       <find>rendered</find>
       <find>html_value</find>
+      <find>@length</find>
+      <find>list</find>
     </findStrings>
     <dirStrings>
       <dir>E:\lym_project\two_db_test</dir>
@@ -120,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/library/migrate/20200507053914_create_test.rb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/db/library/migrate/20200507055246_add_column_to_jiues.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
@@ -169,8 +187,9 @@
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/public/tests/algorithm.rb" />
         <option value="$PROJECT_DIR$/public/tests/struct_test.rb" />
-        <option value="$PROJECT_DIR$/app/models/test/list_test.rb" />
         <option value="$PROJECT_DIR$/app/models/test/stack.rb" />
+        <option value="$PROJECT_DIR$/app/models/test/list_test.rb" />
+        <option value="$PROJECT_DIR$/app/models/test/linken_list.rb" />
       </list>
     </option>
   </component>
@@ -320,7 +339,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Ruby.stack">
+  <component name="RunManager" selected="Ruby.linken_list">
     <configuration name="Development: two_db_test" type="RailsRunConfigurationType" factoryName="Rails">
       <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
       <module name="two_db_test" />
@@ -400,6 +419,20 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/public/tests/algorithm.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
     </configuration>
+    <configuration name="linken_list" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="two_db_test" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/app/models/test" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/app/models/test/linken_list.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+    </configuration>
     <configuration name="spec: two_db_test" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="two_db_test" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -466,38 +499,24 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
     </configuration>
-    <configuration name="users_controller" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="two_db_test" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/app/controllers" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/app/controllers/users_controller.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-    </configuration>
     <list size="9">
       <item index="0" class="java.lang.String" itemvalue="Rails.Production: two_db_test" />
       <item index="1" class="java.lang.String" itemvalue="Rails.Development: two_db_test" />
       <item index="2" class="java.lang.String" itemvalue="Rake.test: two_db_test" />
       <item index="3" class="java.lang.String" itemvalue="Rake.spec: two_db_test" />
-      <item index="4" class="java.lang.String" itemvalue="Ruby.users_controller" />
-      <item index="5" class="java.lang.String" itemvalue="Ruby.algorithm" />
-      <item index="6" class="java.lang.String" itemvalue="Ruby.struct_test" />
-      <item index="7" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'list_test': two_db_test" />
-      <item index="8" class="java.lang.String" itemvalue="Ruby.stack" />
+      <item index="4" class="java.lang.String" itemvalue="Ruby.algorithm" />
+      <item index="5" class="java.lang.String" itemvalue="Ruby.struct_test" />
+      <item index="6" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'list_test': two_db_test" />
+      <item index="7" class="java.lang.String" itemvalue="Ruby.stack" />
+      <item index="8" class="java.lang.String" itemvalue="Ruby.linken_list" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Ruby.stack" />
-        <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'list_test': two_db_test" />
-        <item index="2" class="java.lang.String" itemvalue="Ruby.struct_test" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.algorithm" />
-        <item index="4" class="java.lang.String" itemvalue="Ruby.users_controller" />
+        <item index="0" class="java.lang.String" itemvalue="Ruby.linken_list" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.stack" />
+        <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'list_test': two_db_test" />
+        <item index="3" class="java.lang.String" itemvalue="Ruby.struct_test" />
+        <item index="4" class="java.lang.String" itemvalue="Ruby.algorithm" />
       </list>
     </recent_temporary>
   </component>
@@ -519,7 +538,7 @@
       <workItem from="1591233756756" duration="25859000" />
       <workItem from="1591314815117" duration="25282000" />
       <workItem from="1591835689138" duration="12865000" />
-      <workItem from="1592179994487" duration="1677000" />
+      <workItem from="1592179994487" duration="6147000" />
     </task>
     <servers />
   </component>
@@ -556,7 +575,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134851000" />
+    <option name="totallyTimeSpent" value="139321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -604,13 +623,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/utils/ruby/ruby/Ruby25-x64/lib/ruby/gems/2.5.0/gems/pundit-2.1.0/lib/pundit.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -926,18 +938,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/test/list_test.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/test/stack.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="92">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/test/stack.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/test/list_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-385">
-          <caret line="81" column="18" lean-forward="true" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
+        <state relative-caret-position="23">
+          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/test/linken_list.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1334">
+          <caret line="116" column="19" lean-forward="true" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
           <folding />
         </state>
       </provider>
