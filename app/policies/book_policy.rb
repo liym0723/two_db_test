@@ -4,7 +4,8 @@ class BookPolicy < ApplicationPolicy
   # define_method 动态创建方法
   UsersController.action_methods.each do |action_name|
     define_method "#{action_name}?" do
-      user.name == "liym"
+      # user.name == "liym"
+      true
     end
   end
 
@@ -12,11 +13,11 @@ class BookPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if user.name == "liym_2"
+      # if user.name == "liym_2"
         scope.all
-      else
-        scope.where(user_id: user.id)
-      end
+      # else
+      #   scope.where(user_id: user.id)
+      # end
     end
   end
 end

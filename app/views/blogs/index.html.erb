@@ -1,0 +1,40 @@
+全部的节点
+<%= select_tag :parent_id, options_for_select(nested_set_options(Blog) {|i| "#{'-' * i.level} #{i.name}" }),include_blank: true %>
+
+<br/>
+<br/>
+<br/>
+
+
+父节点
+<div>
+  <%= select_tag :root_node, options_for_select(Blog.roots.pluck(:name, :id)),include_blank: true %>
+</div>
+
+子节点
+<div class="div_root_node">
+  <%= select_tag :son_node%>
+</div>
+
+孙节点
+<div class="div_son_node">
+  <%= select_tag :grandson_node %>
+</div>
+
+
+
+
+
+
+<script>
+  $(function () {
+      $("#root_node, #son_node").change(function(){
+        $.ajax({
+            url: '/blogs/index',
+            type: 'post',
+            dataType: 'script',
+            data: {"blog_id": $(this).val(),"this_name": $(this).attr("id")}
+        })
+      })
+  })
+</script>

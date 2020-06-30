@@ -6,6 +6,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :blogs do
+    collection do
+      post 'index'
+    end
+
+  end
+
   namespace :library do
     resources :books
   end

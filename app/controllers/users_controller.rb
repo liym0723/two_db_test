@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     # 可以根据设定的权限去显示对应的数据
-    user = policy_scope(User)
-   @users = initialize_grid( User,order: 'id')
+    # user = policy_scope(User)
+    # pp User.roots # 获取全部的根节点
+
+    @users = initialize_grid( User,order: 'id')
 
  # pp Mustache.render("Hello {{plant}}",plant: "World!")
 
@@ -79,11 +81,13 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :parent_id)
     end
 
     # policy 返回的 current_user

@@ -65,3 +65,5 @@ gem 'jquery-rails'
 
 gem 'pundit', '~> 2.1' # 权限控制插件
 gem 'mustache', '~> 1.1', '>= 1.1.1' # 邮件模板插件
+
+gem 'awesome_nested_set', '~> 3.2', '>= 3.2.1' #嵌套集

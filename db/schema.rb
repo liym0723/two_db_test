@@ -10,13 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_010703) do
+ActiveRecord::Schema.define(version: 2020_06_30_054632) do
+
+  create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "content", null: false
+    t.integer "parent_id"
+    t.integer "lft", null: false
+    t.integer "rgt", null: false
+    t.integer "depth", default: 0, null: false
+    t.integer "children_count", default: 0, null: false
+    t.index ["lft"], name: "index_blogs_on_lft"
+    t.index ["parent_id"], name: "index_blogs_on_parent_id"
+    t.index ["rgt"], name: "index_blogs_on_rgt"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth", default: 0, null: false
+    t.integer "children_count", default: 0, null: false
+    t.index ["rgt"], name: "index_users_on_rgt"
   end
 
 end

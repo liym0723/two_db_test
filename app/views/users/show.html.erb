@@ -11,6 +11,25 @@
 </p>
 
 <p>
+  <strong>顶级节点: </strong>
+  <%= @user.root? ? "是":"不是" %>
+</p>
+
+<% if @user.root? %>
+  <%= @user.to_text%>
+
+<% end %>
+<%=
+   "根节点 #{@user.root.name}" # +
+   # "子节点 #{@user.children.pluck(:id, :name)}" +
+   # "子孙节点 #{@user.descendants.pluck(:id, :name)}" +
+   # "深度 #{@user.level}"
+%>
+
+
+
+
+<p>
   <strong>Books</strong>
   <%=  %>
 </p>

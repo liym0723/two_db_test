@@ -4,7 +4,8 @@ class UserPolicy < ApplicationPolicy
   # define_method 动态创建方法
   UsersController.action_methods.each do |action_name|
     define_method "#{action_name}?" do
-      user.name == "liym"
+      true
+      # user.name == "liym"
     end
   end
 
@@ -12,11 +13,11 @@ class UserPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if user.name == "liym_2"
+      # if user.name == "liym_2"
         scope.all
-      else
-        scope.where(id: user.id).default_order
-      end
+      # else
+      #   scope.where(id: user.id).default_order
+      # end
     end
   end
 end

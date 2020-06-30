@@ -8,7 +8,6 @@
 <%=
 
   grid(@users) do |u|
-
     u.column name: "ID" do |user|
       user.id
     end
@@ -20,6 +19,29 @@
     u.column name: "Email" do |user|
       user.email
     end
+
+    u.column name: "parent_id" do |user|
+      user.parent_id
+    end
+
+    u.column name: "lft" do |user|
+      user.lft
+    end
+
+    u.column name: "rgt" do |user|
+      user.rgt
+    end
+
+
+    u.column name: "depth" do |user|
+      user.depth
+    end
+
+
+    u.column name: "children_count" do |user|
+      user.children_count
+    end
+
     u.column name: "操作" do |user|
       link_to 'Show', user
     end

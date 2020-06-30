@@ -1,0 +1,12 @@
+$(".div_<%= params[:this_name] %>").html("<%= escape_javascript(select_tag  (params[:this_name] == "son_node"? :grandson_node : :son_node), options_for_select(@options),include_blank: true)%>")
+
+$(function () {
+    $("#root_node, #son_node").change(function(){
+        $.ajax({
+            url: '/blogs/index',
+            type: 'post',
+            dataType: 'script',
+            data: {"blog_id": $(this).val(),"this_name": $(this).attr("id")}
+        })
+    })
+})
