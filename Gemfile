@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'mysql2' , '~> 0.4.4'#'>= 0.3.18', '< 0.5'
+gem 'mysql2', '0.5.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -67,3 +67,19 @@ gem 'pundit', '~> 2.1' # 权限控制插件
 gem 'mustache', '~> 1.1', '>= 1.1.1' # 邮件模板插件
 
 gem 'awesome_nested_set', '~> 3.2', '>= 3.2.1' #嵌套集
+
+
+gem 'sidekiq', '~> 5.2', '>= 5.2.5' # 异步
+gem 'redis', '~> 4.1', '>= 4.1.4' # redis
+
+# 需要先启动server redis-server
+gem 'sinatra', '~> 2.0', '>= 2.0.8.1' #  sidekiq web可视化
+
+gem 'sidekiq-status', '~> 1.1', '>= 1.1.4' # sidekiq status 监听
+
+gem 'rucaptcha' # 图片验证码
+gem 'mocha', '~> 1.11', '>= 1.11.2'
+# gem 'kgio', '~> 2.11.3'
+gem 'dalli'
+
+# gem 'rails_best_practices', '~> 1.20' # 控制代码质量

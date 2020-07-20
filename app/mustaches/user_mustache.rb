@@ -42,7 +42,7 @@ class UserMustache < MustacheBase
   end
 
   def html_value
-    "<b>Test Html</b>"
+    "<a href='baid'>Test Html</a>"
   end
 
 

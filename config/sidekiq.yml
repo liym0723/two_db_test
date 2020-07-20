@@ -1,0 +1,25 @@
+# 最大并发数
+concurrency: 5
+
+# 最大重试次数
+max_retries: 1
+
+# 进程和日志的输出位置
+pidfile: tmp/pids/sidekiq.pid
+logfile: log/sidekiq.log
+
+# 任务队列
+queues:
+# 每个队列可以配置一个可选的权重。权重为2的队列的检查频率是权重为1的队列的两倍
+# [default, 2] -> 设置权重
+  - default
+  - schedule
+
+development:
+  concurrency: 5
+
+staging:
+  concurrency: 10
+
+production:
+  concurrency: 20

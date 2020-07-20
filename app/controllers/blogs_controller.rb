@@ -2,6 +2,8 @@ class BlogsController < ApplicationController
 
   # 树的显示
   def index
+    UserMailer.send_err_mail.deliver_now
+
     blogs = Blog.all
     if blogs.blank?
       root1 = Blog.create(name: '1', content: '跟节点1')

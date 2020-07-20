@@ -9,6 +9,31 @@ class UsersController < ApplicationController
     # user = policy_scope(User)
     # pp User.roots # 获取全部的根节点
 
+
+    # AddLotsOfUsersJob.perform_later # 常规异步执行 -> 立即执行
+    # set
+    # wait -> 延迟多少时间来执行入队
+    # wait_until -> 指定某个时间点入队
+    # priority: 10 -> 入队这个job 并设定优先级
+    # queue: :some_queue -> 入队到指定队列
+
+    # 6个钩子，after, before,  around. 针对enqueue和perform
+    # AddLotsOfUsersJob.set(wait: 20.second).perform_later# 指定延迟多久执行
+
+    # SendMessageJob.perform_async(1,2,3)
+
+  # Sidekiq 会把 perform_async 函数的参数保存在 Redis 中
+    # perform是一个实例方法
+    # HardWorker.perform_async('bob', 5)
+    # 等价于上面 args -> 指参数
+    # Sidekiq::Client.push('clss' => HardWorker, 'args' => ['bob',5])
+
+    # 五分钟后执行的队列
+    # HardWorker.perform_in(5.minutes, 'bob', 5)
+    # HardWorker.perform_at(5.minutes.from_now, 'bob', 5)
+    # 设置队列名字
+    # HardWorker.set(queue: :critical).perform_async(name, count)
+    # ApplicationMailer.seb
     @users = initialize_grid( User,order: 'id')
 
  # pp Mustache.render("Hello {{plant}}",plant: "World!")
@@ -34,12 +59,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
+    # 验证 图片码
+    if verify_rucaptcha?(@user) && @user.save
+      respond_to do |format|
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
-      else
+      end
+    else
+      respond_to do |format|
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

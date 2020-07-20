@@ -17,5 +17,7 @@ module TwoDbTest
     # the framework and any gems in your application.
     config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/**/)
 #    config.middleware.use Rack::Attack
+    # 配合 active job
+    config.active_job.queue_adapter = :sidekiq # 使用 sidekiq 作为异步任务的适配器
   end
 end
