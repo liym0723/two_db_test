@@ -83,3 +83,20 @@ gem 'mocha', '~> 1.11', '>= 1.11.2'
 gem 'dalli'
 
 # gem 'rails_best_practices', '~> 1.20' # 控制代码质量
+
+gem 'roo', '~> 2.0' # excel 导入
+gem 'rubyzip' #, :require => 'zip/zip'
+gem 'zip-zip'
+gem 'axlsx'
+
+gem 'mini_magick', '~> 4.10', '>= 4.10.1' # 图片处理
+
+# gem 'kaminari' # 分页插件
+
+
+gem 'pading', path: 'E:\lym_project\gem\pading'
+# gem 'pading', '~> 0.1.1'
+
+
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'simple_form_imitation', path: 'E:\lym_project\gem\simple_form_imitation'

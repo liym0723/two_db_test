@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_authority
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  helper_method :controller_helper
   # GET /users
   # GET /users.json
   def index
@@ -36,9 +36,12 @@ class UsersController < ApplicationController
     # ApplicationMailer.seb
     @users = initialize_grid( User,order: 'id')
 
+    # User.test_roo
  # pp Mustache.render("Hello {{plant}}",plant: "World!")
 
    # self.response_body = "hello word" # response_body 反应内容
+
+   # render_to_body
   end
 
   # GET /users/1
@@ -104,6 +107,23 @@ class UsersController < ApplicationController
     pp "=========================="
     pp self.response_body = view.render
   end
+
+
+  # Excel 下载全部的数据
+  def excel_download
+    users = User.all
+    redirect_to action: :index if users.blank?
+    file_path = User.excel_download users
+
+
+    redirect_to action: :index
+  end
+
+
+  def controller_helper
+    " controller helper"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

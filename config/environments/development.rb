@@ -14,9 +14,13 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
+  # perform_caching -> 是否启用缓存
+  # cache_store 配置启用那种缓存方式
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
+    # 开始缓存
     config.action_controller.perform_caching = true
 
+    # 如何存储缓存
     config.cache_store = :memory_store
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
@@ -31,6 +35,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
+  # 邮件发送报错时，是否把错误信息发送给用户 开发环境下 设置为 true
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false

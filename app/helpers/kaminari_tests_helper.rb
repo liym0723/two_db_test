@@ -1,0 +1,2 @@
+module KaminariTestsHelper
+end

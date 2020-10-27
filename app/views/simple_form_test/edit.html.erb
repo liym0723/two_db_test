@@ -1,0 +1,7 @@
+<%= test_simple_form_for @user,url: simple_form_test_path,method: :PATCH do |f| %>
+    <%# f.class -> ActionView::Helpers::FormBuilder %>
+    <%#= f.text_field :name %>
+
+    <%= f.input :name,label: 'Your username please', error: 'NAME is mandatory', label_html: { class: 'my_class' },maxlength: true, as: :string, my_wrapper: true   %>
+    <%#= f.submit %>
+<% end %>

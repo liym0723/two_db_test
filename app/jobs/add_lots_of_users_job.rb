@@ -1,5 +1,7 @@
 class AddLotsOfUsersJob < ApplicationJob
   queue_as :default
+  queue_with_priority 50 # 设置整个队列的优先级
+
 
   # after_enqueue :after_enqueue1
   # before_enqueue :before_enqueue1

@@ -1,4 +1,11 @@
 #!/usr/bin/env ruby.exe
+
+require 'pp'
+
+
 APP_PATH = File.expand_path('../config/application', __dir__)
-require_relative '../config/boot'
+#  加载gem
+require_relative '../config/boot' # bundle 的初始化
 require 'rails/commands'
+
+pp "44444444444444444444"

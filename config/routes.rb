@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get 'mustache_test'
+      get 'excel_download'
     end
   end
 
+  resources :admins
+
+  resources :import_jimu_applies
   resources :blogs do
     collection do
       post 'index'
@@ -13,6 +17,8 @@ Rails.application.routes.draw do
 
   end
 
+  resources :kaminari_tests
+  resources :simple_form_test
   namespace :library do
     resources :books
   end

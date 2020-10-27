@@ -1,0 +1,8 @@
+<% @users.each do |user| %>
+  <p><%= user.name %></p>
+<% end %>
+
+<% pp "====================== paginate =========================" %>
+
+<%= test_paginate @users %>
+<%#= paginate @users %>

@@ -1,0 +1,45 @@
+
+<%#
+  # simple_form_for
+  # f.class # SimpleForm::FormBuilder
+
+%>
+
+<%# defaults: {input_html:{ class:'default_class'}} 给全部的input 增加默认class样式 %>
+<%#
+    form_for ->  ActionView -> FormHelper -> def form for
+  # simple_form_for -> form_for(record, options, &block) 返回的是个 ActionView 的 form for
+%>
+<%= simple_form_for @user,url: simple_form_test_index_path,method: :post do |f| %>
+    <%
+      # input_html: {} -> 解析任何html属性设置
+      # wrapper_heml: {} -> 往生成的div上增加 html属性
+      # required -> 必填否， 默认获取presence验证， 增加 * 的 必填
+      # 默认情况下 会查看数据库字段类型，自动分配恰当的input 类型。 as 可以修改
+      # disabled 禁用
+      # f.input_field  去掉包裹的 div
+      # collection: 18..60 -> 能选择18 - 60岁的下拉选择框。且会变成 select的形式
+      # association -> 获取关联选择输入框
+    %>
+    <%
+      # Wrapper -> 预处理
+      # f.class -> SimpleForm::FormBuilder
+      # -> content_tag
+    %>
+    <%= f.input :name,label: 'Your username please', error: 'NAME is mandatory', label_html: { class: 'my_class' },maxlength: true, as: :boolean, my_wrapper: true  %>
+    <%#= f.input :name, as: :currency %>
+    <%#= f.text_field :name, { class:"w300"} %>
+
+    <%#= f.input :name, label: "不能填", placeholder: 'user@domain.com', disabled: true %>
+    <%#= f.input :name, label: "下拉name", as: :select,collection: 18..60, readonly: true %>
+    <%#= f.input :name, label: "label + class", label_html: {class: 'myclass'}  %> <%# 往 label 增加 class %>
+    <%#= f.input :name, label: "input + class", input_html: {class: 'myclass'}  %> <%# 往 input 增加 class %>
+    <%#= f.input :name, label: "div + class", wrapper_html: {class: 'myclass'} %> <%# 往 div 增加 class %>
+    <%#= f.input :name, label: "取消必填符号", required: false  %> <%# 取消必填的 * %>
+    <%#= f.input :name, as: :text, label: 'as 修改 input'%>
+    <%#= f.association :blog, label: "获取关联对象(只适合belongs_to)" %>
+   <%#= f.select :name, User.all.pluck(:name,:id) %>
+
+    <%# 可以和 form_for 混合使用。 具体查询API %>
+  <%#= f.button :submit %>
+<% end %>
