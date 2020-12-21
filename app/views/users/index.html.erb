@@ -1,6 +1,44 @@
 
 <p id="notice"><%= notice %></p>
 
+
+<%#
+
+    默认片段缓存策略
+      视图包含两类内容。 controller 传递过来的实例变量(动态内容，必须手动设置)，本身的静态内容(自动设置)。
+      缓存要考虑这两种内容的更新。 也需要考虑 视图里的显示的层层嵌套的，他们之间是有关联的。
+      cache key = 路径 + 动态内容 cache key + 静态内容 cache key
+      views/project/id - updated_at/7a1156131a6928cb0026877f8b749a
+
+
+
+    伺服 = 服务器
+    页面缓存 -> 直接伺服生成的页面，而不经过 Rails 栈处理。 不使用于 需要验证身份的页面，因为web服务器直接从文件系统中伺服文件。
+    动作缓存 -> 入站请求会经过Rails 栈处理，以便运行前置过滤器，然后在伺服缓存。
+    片段缓存 -> 在不同的条件下失效，使用片段缓存。 片段缓存把视图逻辑放在cache中。下次请求使用缓存存储器的副本伺服
+      缓存由动态和静态内容两部分组成
+      动态内容的cache_key 由我们指定
+
+    cache(name = {}, options = nil, &block)
+    引起数据变化的元素放到name里
+
+    嵌套太深 或 record 对象太多， 或几个对象之间属于弱关联。 都不推荐使用缓存。 过期机制不太好维护
+    @xxxs -> 生成的cache_key是多个project的组合，不希望这么复杂所以一般使用 cache xxx.max(&:updated_at)
+    如果 @xxxs 为空，会出现问题所以需要加上特定的字符串标识  cache [:topics, @xxx.max(&:updated_at)]
+    cache(@follow_click_page, expires_in: Settings[:cosmetic_detail_cache_time].minutes)
+    touch: true 当本身被更新的时候，关联表的updated_at 也会被更新
+
+    值缓存:
+      缓存特定的值 或查询结果。 Rails.cache.fetch
+    sql缓存:
+
+
+    Etag:
+      HTTP协议的标准参数(一段字符), 通过一段字符来判断浏览器 cache 的 内容和服务器端返回的内容是否相同。 从而来决定是否要重新
+      从服务器下载东西(HTTP 200 - 重新下载, 304 - 没有更新)
+
+%>
+
 <h1>Users</h1>
 <%=
 
@@ -56,6 +94,8 @@
 <%= link_to 'Downold users excel',excel_download_users_path %>
 
 
+<%= link_to 'test_collection', collection_test_users_path(p: "This is p") %>
+<%= link_to 'test_member', member_test_user_path(User.first) %>
 <br>
 helper_test -> <%= user_name %>
 <br>

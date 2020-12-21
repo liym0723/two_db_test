@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :users do
     collection do
+      get 'collection_test'
       get 'mustache_test'
       get 'excel_download'
+    end
+    member do
+      get 'member_test'
     end
   end
 
@@ -18,9 +22,17 @@ Rails.application.routes.draw do
   end
 
   resources :kaminari_tests
+  resources :paperclip_test
+  resources :gem_tests
   resources :simple_form_test
   namespace :library do
     resources :books
+  end
+
+  resources :products do
+    collection do
+      post 'index'
+    end
   end
 
   # sidekiq 可视化路由

@@ -26,7 +26,9 @@
       # f.class -> SimpleForm::FormBuilder
       # -> content_tag
     %>
-    <%= f.input :name,label: 'Your username please', error: 'NAME is mandatory', label_html: { class: 'my_class' },maxlength: true, as: :boolean, my_wrapper: true  %>
+    <%= f.input :name,label: 'Your username please', error: 'NAME is mandatory', label_html: { class: 'my_class' },maxlength: true, as: :radio_buttons %>
+    <br>
+    <%= f.full_error :name %>
     <%#= f.input :name, as: :currency %>
     <%#= f.text_field :name, { class:"w300"} %>
 
@@ -41,5 +43,5 @@
    <%#= f.select :name, User.all.pluck(:name,:id) %>
 
     <%# 可以和 form_for 混合使用。 具体查询API %>
-  <%#= f.button :submit %>
+  <%= f.button :submit %>
 <% end %>

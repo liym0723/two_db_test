@@ -26,7 +26,7 @@ Rails.application.configure do
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
-    config.action_controller.perform_caching = false
+    config.action_controller.perform_caching = true
 
     config.cache_store = :null_store
   end
@@ -75,4 +75,5 @@ Rails.application.configure do
       :password => "2wsx8u7y1qaz"
   }
 
+  Paperclip.options[:command_path] = "D:/utils/ImageMagick-6.9.1-Q16"
 end

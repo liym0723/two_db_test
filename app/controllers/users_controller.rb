@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  caches_page :index # 使用缓存的页面来代替action请求对应的页面，这个和缓存系统无关。
+  # caches_action :index #
   before_action :check_authority
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   helper_method :controller_helper
   # GET /users
   # GET /users.json
@@ -8,8 +10,6 @@ class UsersController < ApplicationController
     # 可以根据设定的权限去显示对应的数据
     # user = policy_scope(User)
     # pp User.roots # 获取全部的根节点
-
-
     # AddLotsOfUsersJob.perform_later # 常规异步执行 -> 立即执行
     # set
     # wait -> 延迟多少时间来执行入队
@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     # 设置队列名字
     # HardWorker.set(queue: :critical).perform_async(name, count)
     # ApplicationMailer.seb
+
     @users = initialize_grid( User,order: 'id')
 
     # User.test_roo
@@ -47,6 +48,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+    fresh_when :last_modified => @user.updated_at.utc, :etag => @user
   end
 
   # GET /users/new
@@ -119,6 +122,20 @@ class UsersController < ApplicationController
     redirect_to action: :index
   end
 
+
+  def collection_test
+    pp "=" * 8
+
+    pp params[:p]
+
+    render action: :index
+
+  end
+
+  def member_test
+    pp params
+    render action: :index
+  end
 
   def controller_helper
     " controller helper"

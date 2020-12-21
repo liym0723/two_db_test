@@ -1,0 +1,10 @@
+
+<%= simple_form_for @user, url: gem_tests_path, method: "post" do |f| %>
+    <%= f.input :name %>
+    <%= f.input  :avatar %>
+    <%= f.submit %>
+<% end %>
+
+
+
+<%= image_tag @user.avatar.url %>

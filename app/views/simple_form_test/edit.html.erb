@@ -2,6 +2,7 @@
     <%# f.class -> ActionView::Helpers::FormBuilder %>
     <%#= f.text_field :name %>
 
-    <%= f.input :name,label: 'Your username please', error: 'NAME is mandatory', label_html: { class: 'my_class' },maxlength: true, as: :string, my_wrapper: true   %>
-    <%#= f.submit %>
+    <%= f.input :name,label: 'Your username please', error: 'NAME is mandatory', label_html: { class: 'my_class' },maxlength: true, as: :radio_buttons  %>
+    <%= f.full_error :name %>
+    <%= f.button :submit %>
 <% end %>

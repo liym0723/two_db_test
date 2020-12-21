@@ -93,10 +93,22 @@ gem 'mini_magick', '~> 4.10', '>= 4.10.1' # 图片处理
 
 # gem 'kaminari' # 分页插件
 
-
 gem 'pading', path: 'E:\lym_project\gem\pading'
 # gem 'pading', '~> 0.1.1'
 
-
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'simple_form_imitation', path: 'E:\lym_project\gem\simple_form_imitation'
+
+# 1. excel 各种操作
+
+# 2. 图片的各种处理
+gem 'paperclip', '~> 6.1'
+
+# 3. 旧代码的回顾
+
+#  缓存
+gem 'actionpack-page_caching', '~> 1.2', '>= 1.2.3' # 页面缓存
+gem 'actionpack-action_caching', '~> 1.2', '>= 1.2.1' # 动作缓存
+
+# 检索
+gem 'searchkick', '~> 4.4', '>= 4.4.2'

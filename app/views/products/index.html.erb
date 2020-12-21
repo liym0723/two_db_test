@@ -1,0 +1,76 @@
+
+<div>
+  <%= form_for :products, url: {action: :index}, method: :post do %>
+      search_all: <%= text_field_tag "search_all",params[:search_all]  %><br>
+
+
+      <%#=
+        1. 全部字段检索.
+        2. products.name 检索
+        3. products.price 范围区间检索
+        4. products.store_code 检索
+        5. 一览， 列出检索到的商品属性(件数), 件数排序, 只显示前10个. 点击属性使用属性检索，可以多个属性一起检索
+        6. 一览, 显示价格区间(件数)， 点击区间 按照价格区间检索
+        7. 排序: 默认排序 匹配分数 desc, display_order desc
+           价格升序: price asc, 匹配分数 desc, display_order desc
+           价格降序: price desc, 匹配分数 desc, display_order desc
+
+      %>
+      <hr>
+      详细检索: <br>
+      search_name: <%= text_field_tag "name",params[:name] %><br><br>
+      search_price: <%= text_field_tag "price_start",params[:price_start]  %> ~ <%= text_field_tag "price_end",params[:price_end]  %><br><br>
+      search_code: <%= text_field_tag "store_code",params[:store_code]  %><br><br>
+
+
+
+      <hr>
+      商品属性
+      <div>
+        <% @products.aggs["property_name"]["buckets"].each_with_index do |bucket,i| %>
+            <% next if i > 10 %>
+            <div>
+              <%= link_to  bucket["key"],request.params.merge(property_name: bucket["key"]), method: :post  %>
+              (<%= bucket["doc_count"] %>)
+            </div>
+        <% end %>
+      </div>
+      <hr>
+      价格区间
+      <% @products.aggs["price"]["buckets"].each do |bucket| %>
+        <div>
+          <%= link_to  bucket["key"],request.params.merge(price_start: bucket["from"],price_end: bucket["to"]) , method: :post %>
+          (<%= bucket["doc_count"] %>)
+        </div>
+      <% end %>
+      <hr>
+      <br>
+
+
+
+      <%= submit_tag "search" %>
+  <% end %>
+<div>
+
+  <%= paginate @products %>
+</div>
+
+  <% @products.each do |product| %>
+      name: <%= product.name %> <br>
+      code: <%= product.store_code %> <br>
+      price: <%= product.price %><br>
+      properties_name: <%=  product.property_name.join(",") %><br><br>
+      <br/>
+  <% end %>
+
+
+  <%= paginate @products %>
+</div>
+
+<script>
+  $(function () {
+
+  })
+</script>
+
+

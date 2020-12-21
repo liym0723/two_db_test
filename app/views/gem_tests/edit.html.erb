@@ -1,0 +1,9 @@
+
+<%= simple_form_for @user, url: gem_test_path, method: "PATCH" do |f| %>
+    <%= f.input :name %>
+    <%= f.input :avatar, as: :file %>
+    <%= f.submit %>
+    <%= image_tag @user.avatar.url %>
+    <%= image_tag @user.avatar.url(:medium) %>
+    <%= image_tag @user.avatar.url(:thumb) %>
+<% end %>

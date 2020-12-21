@@ -2,12 +2,25 @@ class User < ApplicationRecord
   acts_as_nested_set :counter_cache => :children_count # 启用嵌套集功能
   belongs_to :blog
 
-  validates :name, :email, presence: true
+  validates :name, presence: true
 
   Jimu_Apply_key = {relationship: "続柄", gender: "性別",sign_no: "保険証の記号", insured_no: "保険証の番号", kana_name: "申込者氏名（カナ）",
                     birth: "生年月日", email: "メールアドレス", join_time: "希望日"}
 
   scope :default_order, -> {order(id: :asc)}
+
+
+  # paperclip 使用
+  # medium 中号图片大小
+  # thumb 小号图片大小
+  # has_attached_file  参数介绍 https://www.rubydoc.info/gems/paperclip/Paperclip/ClassMethods
+  #
+  # has_attached_file :avatar, style: {medium: "300x300#", thumb: "100x100#"}, default_url: "/images/:style/missing.png"
+  # # 4.0 之后 所以附件必须包括 content_type 验证。  默认情况下保持安全
+  # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  # validates :avatar, attachment_presence: true # 必填
+  # validates_with AttachmentPresenceValidator, Properties: :avatar # 附件必须存在验证器
+  # validates_with AttachmentSizeValidator, Properties: :avatar, less_than: 1.megabytes # 文件大小小于1兆
 
 
   # excel 形式 下载 user
