@@ -27,16 +27,22 @@ class Product < ApplicationRecord
               display_start_at: {type: 'date'},
               display_end_at: {type: 'date'},
               price: {type: 'integer'},
-              "property_name": {
-              "type": "keyword",
-              "ignore_above": 30000,
-              "fields": {
-                  "analyzed": {
-                      "type": "text",
-                      "analyzer": "searchkick_index"
+              # "property_name": {
+              # "type": "keyword",
+              # "ignore_above": 30000,
+              # "fields": {
+              #     "analyzed": {
+              #         "type": "text",
+              #         "analyzer": "searchkick_index"
+              #     }
+              # }
+          # }
+              "properties": {
+                  "type": "nested",
+                  properties: {
+                      name: {"type": "keyword"}
                   }
               }
-      }
               # property_name: {
               #     type: "join",
               #     relations: {
@@ -127,7 +133,7 @@ class Product < ApplicationRecord
     # end
 
     # 商品属性， 价格区间
-    price_ranges = [{to: 99}, {from: 100, to: 199}, {from: 200}]
+    price_ranges = [{to: 100}, {from: 100, to: 200}, {from: 200}]
     # _score 匹配分数
     # 价格降序 order: {price: desc,_score: :desc,display_order: :desc} 价格升序  order: {price: asc,_score: :desc,display_order: :desc}
     # Elasticsearch获取所有内容 load: false
@@ -135,7 +141,7 @@ class Product < ApplicationRecord
 
     pp conn
 
-    Product.search key, where: conn,load: false, aggs: {property_name:{limit: 10},price:  {ranges: price_ranges}}, order: {_score: :desc,display_order: :desc}, limit: 20, offset: 0
+    Product.search key, where: conn,load: false, aggs: {property_name: {limit: 10,order:  {"_count" => "desc"}},price:  {ranges: price_ranges}}, order: {_score: :desc,display_order: :desc}, limit: 20, offset: 0
     # Product.search key,load: false#, analyzed: "name"# ,debug: true
   end
 

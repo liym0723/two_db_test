@@ -11,8 +11,7 @@ class ProductsController < ApplicationController
         #    价格降序: price desc, 匹配分数 desc, display_order desc
 
   def index
-
-    Product.reindex
+    # Product.reindex
     # ProductProperty.reindex
     # Property.reindex
     # npm run start
@@ -79,6 +78,7 @@ class ProductsController < ApplicationController
 
     @products = Product.get_conn params
 
+    pp @products.aggs
 
     #########################################################
     # ES 一些语法
