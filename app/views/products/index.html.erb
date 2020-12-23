@@ -27,17 +27,16 @@
       <hr>
       商品属性
       <div>
-        <% @products.aggs["property_name"]["buckets"].each_with_index do |bucket,i| %>
-            <% next if i > 10 %>
+        <% @products.aggs.present? && @products.aggs["property_name"]["buckets"].each_with_index do |bucket,i| %>
             <div>
-              <%= link_to  bucket["key"],request.params.merge(property_name: bucket["key"]), method: :post  %>
+              <%= link_to  bucket["key"],request.params.merge("property_name_#{i}" => bucket["key"]), method: :post  %>
               (<%= bucket["doc_count"] %>)
             </div>
         <% end %>
       </div>
       <hr>
       价格区间
-      <% @products.aggs["price"]["buckets"].each do |bucket| %>
+      <% @products.aggs.present? && @products.aggs["price"]["buckets"].each do |bucket| %>
         <div>
           <%= link_to  bucket["key"],request.params.merge(price_start: bucket["from"],price_end: bucket["to"]) , method: :post %>
           (<%= bucket["doc_count"] %>)
@@ -51,7 +50,7 @@
       <%= submit_tag "search" %>
   <% end %>
 <div>
-
+  <%= number_with_delimiter(@products.total_count) %></span> 件 </span>
   <%= paginate @products %>
 </div>
 

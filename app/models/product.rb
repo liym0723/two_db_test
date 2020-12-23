@@ -1,9 +1,41 @@
 class Product < ApplicationRecord
   # 默认英语匹配
   # stem_exclusion 排除某些词
-  searchkick default_fields: [:name, :store_code, :full_description, :property_name] # language: "chinese"
+  # callbacks: false 回调功能
+  # 定义索引结构
+  searchkick default_fields: [:name, :store_code, :full_description, :property_name],
+             merge_mappings: true, mappings: {
+          # https://www.cnblogs.com/wupeixuan/p/12514843.html
+          properties: {
+              name: {type: 'keyword', "fields": {
+                  "analyzed": {
+                      "type": "text",
+                      "analyzer": "searchkick_index"
+                  }}},
+              store_code: {type: 'keyword', "fields": {
+                  "analyzed": {
+                      "type": "text",
+                      "analyzer": "searchkick_index"
+                  }}},
+              full_description: {type: 'text', "fields": {
+                  "analyzed": {
+                      "type": "text",
+                      "analyzer": "searchkick_index"
+                  }}},
+              display_order: {type: 'integer'},
+              published:  {type: 'boolean'},
+              display_start_at: {type: 'date'},
+              display_end_at: {type: 'date'},
+              price: {type: 'integer'}#,
+              # property_name: {
+              #     type: "join",
+              #     relations: {
+              #         product: "properties"
+              # }
+          }
+      }
 
-  scope :search_import, -> {includes(:properties)}
+  scope :search_import, -> {where(published: true).includes(:properties)}
   scope :default_order, -> {{_score: :desc,display_order: :desc}}
 
   #  关联表建索引
@@ -26,7 +58,7 @@ class Product < ApplicationRecord
   has_many :product_properties
   has_many :properties, through: :product_properties
 
-
+  after_commit :reindex_product
 
 
   def self.new_products
@@ -54,11 +86,10 @@ class Product < ApplicationRecord
     conn = {published: true, display_start_at: {gte: Time.now -  100.day}, display_end_at: {lte: Time.now +  100.day}}
     params[:page] ||= 1
     params[:per_page] ||= 20
-    conn[:name] = {like: "%#{params[:name]}%"} if params[:name].present?
+    conn[:name] =  params[:name] if params[:name].present?
     conn[:store_code] = {like: "%#{params[:store_code]}%"} if params[:store_code].present?
 
-
-    # 获取最大钱
+    # 价格区间
     if params[:price_start].present? || params[:price_end].present?
       # preices = Product.search "*",order: {price: :desc}
       # max_price =  params[:price_end].present? ? params[:price_end] : preices.first.price
@@ -70,9 +101,12 @@ class Product < ApplicationRecord
 
       conn[:price].merge!({gte: params[:price_start].to_i}) if params[:price_start].present?
       conn[:price].merge!({lte: params[:price_end].to_i}) if params[:price_end].present?
-
     end
 
+    # 商品属性
+    attribute_names = []
+    params.each {|key,v| attribute_names << v if key.include?("property_name")}
+    conn[:property_name] = {all: attribute_names} if attribute_names.present?
 
     # if params[:price_start].present? || params[:price_end].present?
     #   # price_ranges = [{to: 20}, {from: 20, to: 50}, {from: 50}]
@@ -87,6 +121,19 @@ class Product < ApplicationRecord
     # _score 匹配分数
     # 价格降序 order: {price: desc,_score: :desc,display_order: :desc} 价格升序  order: {price: asc,_score: :desc,display_order: :desc}
     # Elasticsearch获取所有内容 load: false
-    Product.search key, where: conn,load: false, aggs: {property_name:{},price:  {ranges: price_ranges}}, order: {_score: :desc,display_order: :desc}, limit: 10, offset: 0
+    # limit: 10 取10个
+
+    pp conn
+
+    Product.search key, where: conn,load: false, aggs: {property_name:{limit: 10},price:  {ranges: price_ranges}}, order: {_score: :desc,display_order: :desc}, limit: 20, offset: 0
+    # Product.search key,load: false#, analyzed: "name"# ,debug: true
+  end
+
+  def reindex_product
+    self.reindex
+  end
+
+  def should_index?
+    self.published
   end
 end

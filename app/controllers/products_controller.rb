@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
     # load: false 获取所有字段内容
     # select: [:name] 只获取到指定字段
     # boost_by: [:price] 按照指定字段降序
-    # 查询的字符串 默认需要全部匹配 " code 2 "  code and 2
+    # 查询的字符串 默认需要全部匹配 " code 2 "  code s 2
       # 默认使用匹配策略 word 整个词
         # word 整个词   * 默认
         # ord_start 词开头
@@ -79,7 +79,6 @@ class ProductsController < ApplicationController
 
     @products = Product.get_conn params
 
-    pp @products.aggs
 
     #########################################################
     # ES 一些语法
