@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 
   def index
 
-    # Product.reindex
+    Product.reindex
     # ProductProperty.reindex
     # Property.reindex
     # npm run start

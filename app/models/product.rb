@@ -26,7 +26,17 @@ class Product < ApplicationRecord
               published:  {type: 'boolean'},
               display_start_at: {type: 'date'},
               display_end_at: {type: 'date'},
-              price: {type: 'integer'}#,
+              price: {type: 'integer'},
+              "property_name": {
+              "type": "keyword",
+              "ignore_above": 30000,
+              "fields": {
+                  "analyzed": {
+                      "type": "text",
+                      "analyzer": "searchkick_index"
+                  }
+              }
+      }
               # property_name: {
               #     type: "join",
               #     relations: {
