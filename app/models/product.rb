@@ -27,16 +27,16 @@ class Product < ApplicationRecord
               display_start_at: {type: 'date'},
               display_end_at: {type: 'date'},
               price: {type: 'integer'},
-              # "property_name": {
-              # "type": "keyword",
-              # "ignore_above": 30000,
-              # "fields": {
-              #     "analyzed": {
-              #         "type": "text",
-              #         "analyzer": "searchkick_index"
-              #     }
-              # }
-          # }
+              "property_name": {
+              "type": "keyword",
+              "ignore_above": 30000,
+              "fields": {
+                  "analyzed": {
+                      "type": "text",
+                      "analyzer": "searchkick_index"
+                  }
+              }
+          },
               "properties": {
                   "type": "nested",
                   properties: {
@@ -99,7 +99,8 @@ class Product < ApplicationRecord
 
   def self.get_conn params
     key = params[:search_all].present? ? params[:search_all] : "*"
-    conn = {published: true, display_start_at: {gte: Time.now -  100.day}, display_end_at: {lte: Time.now +  100.day}}
+    # conn = {published: true, display_start_at: {gte: Time.now -  100.day}, display_end_at: {lte: Time.now +  100.day}}
+    conn = {}
     params[:page] ||= 1
     params[:per_page] ||= 20
     conn[:name] =  params[:name] if params[:name].present?
@@ -139,11 +140,87 @@ class Product < ApplicationRecord
     # Elasticsearch获取所有内容 load: false
     # limit: 10 取10个
 
+
+    # Product.search key, where: conn,load: false
+
     pp conn
 
-    Product.search key, where: conn,load: false, aggs: {property_name: {limit: 10,order:  {"_count" => "desc"}},price:  {ranges: price_ranges}}, order: {_score: :desc,display_order: :desc}, limit: 20, offset: 0
-    # Product.search key,load: false#, analyzed: "name"# ,debug: true
+    # Product.search key, where: conn,load: false, aggs: {property_name: {limit: 10,order:  {"_count" => "desc"}},price:  {ranges: price_ranges}}, order: {_score: :desc,display_order: :desc}, limit: 20, offset: 0
+    Product.search key, where: conn,load: false#, analyzed: "name"# ,debug: true
   end
+
+
+  def self.get_body_conn params
+    # Product.search body: {query: {match: {name: "milk"}}}
+    # search body: query_body, aggs: aggs, order: sort, limit: 20, offset: 0
+
+    # Product.search body:  {"query": {
+    #     "term": {
+    #         "name": "商品liym_1"
+    #     }
+    # }},load: false
+
+    # Product.search "商品liym1",load: false, fields: [:name,:full_description]
+    # Product.search body: {
+    #     "query": {
+    #         "match": {
+    #             "name": "商品liym1"
+    #         }
+    #     }
+    # }
+    #
+    # Product.search "*", where: {"name": "商品liym_1", "store_code": "code_1" },load: false
+    #
+    # Product.search body: {query: {bool: {
+    #     must: {match_all: {}},
+    #     filter: [
+    #         {term: {name: "商品liym_1"}},
+    #         {term: {store_code: "code_1"}}
+    #     ]
+    # }}},load: false
+    # price_ranges = [{to: 100}, {from: 100, to: 200}, {from: 200}]
+    # Product.search "*", aggs: {property_name: {limit: 10,order:  {"_count" => "desc"}},price:  {ranges: price_ranges}},load: false
+
+    Product.search body: {
+        query: {match_all: {}},
+        aggs: {
+            property_name: { # 自定义名字。
+                             terms: { # 聚合
+                                      field: "property_name", # 对应字段
+                                      size: 10, # 取出数量最大值
+                                      order: {_count: :desc} # 排序
+                             }
+            },
+            price: {
+                range: { # 聚合
+                    field: "price",
+                    ranges: [
+                        {"to": 100}, {"from": 100, "to": 200}, {"from": 200}
+                    ]
+                }}
+        }
+    },load: false
+
+
+  end
+
+  # 获取聚合
+  def aggs
+    {}
+  end
+
+  # 获取 检索body
+  def query_body
+    {}
+  end
+
+  def sort
+    {}
+  end
+
+
+
+
 
   def reindex_product
     self.reindex
